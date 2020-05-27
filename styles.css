@@ -6,13 +6,12 @@ body {
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:  5%;
+  margin: 5%;
   color: #FEF2BF;
 }
 
 .container {
   display: block;
-  width: 50%;
   margin: auto;
 
 }
@@ -45,6 +44,26 @@ body {
 
 .yellow {
   background-color: yellow;
+}
+
+.fuchsia {
+  background-color: fuchsia;
+}
+
+.aqua {
+  background-color: aqua;
+}
+
+.lime {
+  background-color: lime;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.hide {
+  display: none;
 }
 
 .pressed {
