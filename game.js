@@ -8,7 +8,7 @@ let started = false;
 
 let level = 0;
 
-let categoryLevel = 1;
+let categoryLevel = 5;
 
 $("body").keypress(function () {
 
@@ -26,7 +26,16 @@ function nextSequence() {
   level++;
   if (level !== 1 && (level - 1) % categoryLevel === 0 && (level - 1) % categoryLevel < 5) {
     $("#" + buttonColors[3 + (level - 1) / categoryLevel]).removeClass("hide");
+    $("h1").text("Congratulations, Level " + level);
+    $("body").addClass("success");
+
+    setTimeout(function () {
+      $("body").removeClass('success');
+    }, 200);
+  } else{
+    $("h1").text("Level " + level);
   }
+
   let randomNumber = Math.floor(Math.random() * (4 + Math.min((level - 1) / categoryLevel, buttonColors.length - 4)));
 
   let randomChosenColour = buttonColors[randomNumber];
@@ -38,8 +47,6 @@ function nextSequence() {
   playSound(randomChosenColour);
 
   animatePress(randomChosenColour);
-
-  $("h1").text("Level " + level);
 
 }
 
